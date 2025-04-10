@@ -4,8 +4,8 @@
   "description": "Explore Star Wars characters and their details",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#111319",
-  "theme_color": "#8B0000",
+  "background_color": "#191c26",
+  "theme_color": "#191c26",
   "orientation": "portrait-primary",
   "icons": [
     {

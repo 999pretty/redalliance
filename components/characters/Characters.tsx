@@ -285,6 +285,21 @@ const Characters: React.FC<CharactersProps> = ({ setShowCursor, setIsModalOpen }
 
   return (
     <ErrorBoundary>
+      <style jsx>{`
+        @media (max-width: 450px) {
+          .page-btn {
+            font-size: 11px !important;
+            padding: 6px 12px !important;
+            min-width: 50px !important;
+          }
+          .pagination {
+            gap: 10px !important;
+          }
+          .page-info {
+            font-size: 8px !important;
+          }
+        }
+      `}</style>
       <div className={`characters_list ${poppins.className}`}>
         <SearchAndFilter
           filterProperty={filterProperty}

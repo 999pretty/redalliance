@@ -7,4 +7,11 @@
   padding: 0;
 }
 
+html,
+body {
+  background-color: #191c26;
+  color: white;
+  min-height: 100vh;
+}
+
 /* Your custom styles below */

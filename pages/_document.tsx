@@ -13,21 +13,31 @@ export default function Document(): ReactElement<DocumentProps> {
         />
         <link rel="manifest" href="/manifest.json" />
         <meta name="description" content="Alliance | Starwars DB" />
-        <meta name="theme-color" content="#1A1C26" />
+        <meta name="theme-color" content="#191c26" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="/fonts/fonts.css" />
 
         <style>{`
+          :root {
+            color-scheme: dark;
+          }
+          
+          html {
+            background-color: #191c26;
+          }
+          
           body {
             margin: 0;
             padding: 0;
-            background-color: #111319;
+            background-color: #191c26;
             color: white;
           }
+          
           .wrapper {
             min-height: 100vh;
             position: relative;
+            background-color: #191c26;
           }
         `}</style>
       </Head>
