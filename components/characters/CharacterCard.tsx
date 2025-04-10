@@ -4,14 +4,14 @@ import Tilt from 'react-parallax-tilt';
 import { Character } from '../../types/character.types';
 import { poppins } from '@/app/fonts';
 
-interface CharacterCardProps {
+type CharacterCardProps = {
   character: Character;
   index: number;
   onCharacterClick: (character: Character, index: number) => Promise<void>;
   isOpen: boolean;
   selectedCharacter: Character | null;
   handleTabKey: (e: React.KeyboardEvent) => void;
-}
+};
 
 const CharacterCard: ForwardRefRenderFunction<HTMLDivElement, CharacterCardProps> = (
   { character, index, onCharacterClick, isOpen, selectedCharacter, handleTabKey },

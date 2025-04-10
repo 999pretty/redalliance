@@ -4,11 +4,11 @@ import ScrollspyNav from 'react-scrollspy-nav';
 import sidebarContent from '../../nav/sidebar';
 import Image from 'next/image';
 
-interface SidebarFooterContent {
+type SidebarFooterContent = {
   name: string;
   email: string;
   emailRef: string;
-}
+};
 
 const LazyEmail = dynamic(() => import('./LazyEmail'));
 

@@ -6,7 +6,7 @@ import { UI } from '../config/constants';
 /**
  * Return type for the useCharacters hook
  */
-interface UseCharactersReturn {
+type UseCharactersReturn = {
   /** List of characters for the current page */
   characters: Character[];
   /** Complete list of all fetched characters */
@@ -19,7 +19,7 @@ interface UseCharactersReturn {
   fetchAllCharacters: () => Promise<void>;
   /** Function to fetch a character's homeworld */
   fetchCharacterHomeworld: (character: Character) => Promise<Character>;
-}
+};
 
 /**
  * Custom hook for managing Star Wars characters data

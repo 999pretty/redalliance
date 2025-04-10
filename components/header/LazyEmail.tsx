@@ -1,15 +1,15 @@
 import React from 'react';
 import { poppins } from '@/app/fonts';
 
-interface SidebarFooterContent {
+type SidebarFooterContent = {
   name: string;
   email: string;
   emailRef: string;
-}
+};
 
-interface LazyEmailProps {
+type LazyEmailProps = {
   sidebarFooterContent: SidebarFooterContent;
-}
+};
 
 function LazyEmail({ sidebarFooterContent }: LazyEmailProps) {
   return (

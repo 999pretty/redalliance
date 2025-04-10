@@ -37,6 +37,9 @@ Ideas for future:
 - Add more sections
 - Add more data, since its a DB style app
 
+## Key concepts used in this app
+
+
 
 ## Getting Started
 

@@ -1,10 +1,10 @@
 import { APIService } from './types';
 import { ERROR_MESSAGES } from '../../config/constants';
 
-interface PaginatedResponse<T> {
+type PaginatedResponse<T> = {
   next: string | null;
   results: T[];
-}
+};
 
 export class BaseAPIService implements APIService {
   constructor(protected baseURL: string) {}

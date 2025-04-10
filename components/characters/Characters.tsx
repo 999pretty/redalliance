@@ -10,10 +10,10 @@ import { useCharacters } from '../../hooks/useCharacters';
 
 Modal.setAppElement('#__next');
 
-interface CharactersProps {
+type CharactersProps = {
   setShowCursor?: (show: boolean) => void;
   setIsModalOpen?: (isOpen: boolean) => void;
-}
+};
 
 const Characters: React.FC<CharactersProps> = ({ setShowCursor, setIsModalOpen }) => {
   const {

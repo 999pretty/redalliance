@@ -1,9 +1,7 @@
 import Link from 'next/link';
 import { FC } from 'react';
 
-interface HeaderMobileProps {}
-
-const HeaderMobile: FC<HeaderMobileProps> = () => {
+const HeaderMobile: FC = () => {
   return (
     <>
       <div className="logo">

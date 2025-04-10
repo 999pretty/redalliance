@@ -1,15 +1,15 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
 import { poppins } from '@/app/fonts';
 
-interface Props {
+type Props = {
   children: ReactNode;
   fallback?: ReactNode;
-}
+};
 
-interface State {
+type State = {
   hasError: boolean;
   error: Error | null;
-}
+};
 
 class ErrorBoundary extends Component<Props, State> {
   public state: State = {

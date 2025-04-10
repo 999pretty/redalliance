@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image';
 
-export interface Character {
+export type Character = {
   id: string;
   name: string;
   height: string;
@@ -20,16 +20,16 @@ export interface Character {
   url: string;
   imageUrl: string | StaticImageData;
   placeholder?: boolean;
-}
+};
 
-export interface CharactersProps {
+export type CharactersProps = {
   setShowCursor?: (show: boolean) => void;
   setIsModalOpen?: (isOpen: boolean) => void;
-}
+};
 
-export interface SWAPIResponse {
+export type SWAPIResponse = {
   count: number;
   next: string | null;
   previous: string | null;
   results: Character[];
-}
+};

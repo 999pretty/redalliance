@@ -2,7 +2,7 @@ import React from 'react';
 import { Character } from '../../types/character.types';
 import { CSSProperties } from 'react';
 
-interface SearchAndFilterProps {
+type SearchAndFilterProps = {
   filterProperty: keyof Character;
   setFilterProperty: (property: keyof Character) => void;
   sortDirection: 'asc' | 'desc';
@@ -25,7 +25,7 @@ interface SearchAndFilterProps {
   setAscButtonFocused: (focused: boolean) => void;
   descButtonFocused: boolean;
   setDescButtonFocused: (focused: boolean) => void;
-}
+};
 
 const SearchAndFilter: React.FC<SearchAndFilterProps> = ({
   filterProperty,

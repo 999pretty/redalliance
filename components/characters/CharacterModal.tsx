@@ -4,13 +4,13 @@ import Image from 'next/image';
 import { Character } from '../../types/character.types';
 import { poppins } from '@/app/fonts';
 
-interface CharacterModalProps {
+type CharacterModalProps = {
   isOpen: boolean;
   onClose: () => void;
   character: Character | null;
   closeButtonRef: React.RefObject<HTMLButtonElement>;
   handleImageError: (e: React.SyntheticEvent<HTMLImageElement>) => void;
-}
+};
 
 const CharacterModal: React.FC<CharacterModalProps> = ({
   isOpen,
@@ -174,10 +174,10 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
   );
 };
 
-interface CharacterDetailProps {
+type CharacterDetailProps = {
   label: string;
   value: string;
-}
+};
 
 const CharacterDetail: React.FC<CharacterDetailProps> = ({ label, value }) => (
   <p

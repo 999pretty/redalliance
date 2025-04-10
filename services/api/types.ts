@@ -3,44 +3,44 @@ import { Character } from '../../types/character.types';
 /**
  * Generic API response type for paginated data
  */
-export interface PaginatedResponse<T> {
+export type PaginatedResponse<T> = {
   count: number;
   next: string | null;
   previous: string | null;
   results: T[];
-}
+};
 
 /**
  * API error response
  */
-export interface APIError {
+export type APIError = {
   status: number;
   message: string;
-}
+};
 
 /**
- * Base API service interface
+ * Base API service type
  */
-export interface APIService {
+export type APIService = {
   get<T>(url: string): Promise<T>;
   getAll<T>(url: string): Promise<T[]>;
-}
+};
 
 /**
- * Character API service interface
+ * Character API service type
  */
-export interface CharacterAPIService {
+export type CharacterAPIService = {
   getAllCharacters(): Promise<PaginatedResponse<Character>>;
   getCharacterHomeworld(url: string): Promise<{ name: string }>;
-}
+};
 
 /**
  * API configuration type
  */
-export interface APIConfig {
+export type APIConfig = {
   baseURL: string;
   endpoints: {
     [key: string]: string;
   };
   imageBaseURL: string;
-}
+};
