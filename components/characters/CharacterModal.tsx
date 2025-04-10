@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import Image from 'next/image';
 import { Character } from '../../types/character.types';
 import { poppins } from '@/app/fonts';
+import { useWindowSize } from '../../hooks/useWindowSize';
 
 type CharacterModalProps = {
   isOpen: boolean;
@@ -19,6 +20,9 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
   closeButtonRef,
   handleImageError,
 }) => {
+  const { width } = useWindowSize();
+  const isMobile = width <= 700;
+
   return (
     <Modal
       isOpen={isOpen}
@@ -73,15 +77,16 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                     className="character-modal-content"
                     style={{
                       display: 'flex',
-                      alignItems: 'flex-start',
-                      gap: '40px',
+                      flexDirection: isMobile ? 'column' : 'row',
+                      alignItems: isMobile ? 'center' : 'flex-start',
+                      gap: isMobile ? '20px' : '40px',
                     }}
                   >
                     <div
                       className="character-modal-image"
                       style={{
-                        width: '300px',
-                        height: '300px',
+                        width: isMobile ? '250px' : '300px',
+                        height: isMobile ? '250px' : '300px',
                         flex: 'none',
                         position: 'relative',
                         overflow: 'hidden',
@@ -91,8 +96,8 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                       <Image
                         src={character.imageUrl}
                         alt={character.name}
-                        width={300}
-                        height={300}
+                        width={isMobile ? 250 : 300}
+                        height={isMobile ? 250 : 300}
                         style={{
                           objectFit: 'cover',
                           borderRadius: '10px',
@@ -110,7 +115,14 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                         }}
                       />
                     </div>
-                    <div className="character-modal-details" style={{ flex: 1 }}>
+                    <div
+                      className="character-modal-details"
+                      style={{
+                        flex: 1,
+                        width: isMobile ? '100%' : 'auto',
+                        textAlign: isMobile ? 'center' : 'left',
+                      }}
+                    >
                       <h3
                         className={poppins.className}
                         style={{
@@ -128,13 +140,41 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                           marginBottom: '25px',
                         }}
                       >
-                        <CharacterDetail label="Height" value={`${character.height} cm`} />
-                        <CharacterDetail label="Mass" value={`${character.mass} kg`} />
-                        <CharacterDetail label="Hair Color" value={character.hair_color} />
-                        <CharacterDetail label="Eye Color" value={character.eye_color} />
-                        <CharacterDetail label="Birth Year" value={character.birth_year} />
-                        <CharacterDetail label="Gender" value={character.gender} />
-                        <CharacterDetail label="Homeworld" value={character.homeworld} />
+                        <CharacterDetail
+                          label="Height"
+                          value={`${character.height} cm`}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Mass"
+                          value={`${character.mass} kg`}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Hair Color"
+                          value={character.hair_color}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Eye Color"
+                          value={character.eye_color}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Birth Year"
+                          value={character.birth_year}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Gender"
+                          value={character.gender}
+                          isMobile={isMobile}
+                        />
+                        <CharacterDetail
+                          label="Homeworld"
+                          value={character.homeworld}
+                          isMobile={isMobile}
+                        />
                       </div>
                       <div className="character-description">
                         <h4
@@ -144,6 +184,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                             marginTop: 0,
                             marginBottom: '15px',
                             fontSize: '18px',
+                            textAlign: 'left',
                           }}
                         >
                           Description
@@ -154,6 +195,7 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
                             margin: 0,
                             lineHeight: '1.6',
                             color: '#666',
+                            textAlign: 'left',
                           }}
                         >
                           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
@@ -177,15 +219,20 @@ const CharacterModal: React.FC<CharacterModalProps> = ({
 type CharacterDetailProps = {
   label: string;
   value: string;
+  isMobile?: boolean;
 };
 
-const CharacterDetail: React.FC<CharacterDetailProps> = ({ label, value }) => (
+const CharacterDetail: React.FC<CharacterDetailProps> = ({ label, value, isMobile = false }) => (
   <p
     style={{
       margin: 0,
       display: 'grid',
       gridTemplateColumns: '120px 1fr',
+      gap: isMobile ? '8px' : '0',
       alignItems: 'center',
+      justifyItems: 'start',
+      textAlign: 'left',
+      width: '100%',
     }}
   >
     <strong style={{ color: '#8B0000' }}>{label}:</strong>
