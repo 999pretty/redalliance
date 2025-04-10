@@ -1,0 +1,27 @@
+.alliance_tm_characters {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  padding: 0 0 60px 0;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+  .pagination {
+    .page-info {
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      font-weight: 600;
+    }
+
+    .page-btn {
+      color: #ffffff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+
+      &:disabled {
+        color: #a0a0a0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+      }
+    }
+  }
+}
